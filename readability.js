@@ -4,7 +4,8 @@ import {Readability} from "@mozilla/readability";
 import {JSDOM} from "jsdom";
 
 const filepath = process.argv[2]
-const encoding = process.argv[3] || null
+const encoding = process.argv[3] || "utf-8"
+console.log(filepath, encoding)
 
 if (!filepath) {
     console.log("filepath empty")
