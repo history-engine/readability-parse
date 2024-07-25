@@ -31,6 +31,8 @@ function processInput(content, encoding) {
 
 function processDom(dom) {
     let article = new Readability(dom.window.document, {debug: false}).parse()
-    article['charset'] = dom.window.document.characterSet;
+    if (article) {
+        article['charset'] = dom.window.document.characterSet;
+    }
     console.log(JSON.stringify(article, null, 4))
 }
